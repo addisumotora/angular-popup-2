@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="centered">
+    <button class="btn" (click)="openPopup()">Open Popup</button>
+  </div>
+</div>
+
+<div *ngIf="showPopup" class="popup-container">
+  <div class="popup">
+    <div class="inner-container">
+      <h2>Popup</h2>
+      <p>Select an option:</p>
+      <div class="option">
+        <select>
+          <option *ngFor="let option of options" [value]="option">
+            {{ option }}
+          </option>
+        </select>
+        <div class="btn-container">
+          <button (click)="closePopup()">Close</button>
+          <button class="search">Search</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
